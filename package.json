@@ -1,0 +1,18 @@
+{
+  "name": "medicare-connect",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MediCare Connect - MERN healthcare appointment & patient system",
+  "scripts": {
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "predev": "node scripts/stop-dev.mjs",
+    "dev:stop": "node scripts/stop-dev.mjs",
+    "dev": "concurrently --kill-others-on-fail -n server,client -c blue,green \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "seed": "npm run seed --prefix server",
+    "build": "npm run build --prefix client",
+    "start": "npm start --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
